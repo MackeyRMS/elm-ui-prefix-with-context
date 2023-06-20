@@ -3,7 +3,7 @@
     "name": "MackeyRMS/elm-ui-with-context",
     "summary": "fork of elm-ui-with-context",
     "license": "BSD-3-Clause",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "exposed-modules": [
         "Element.WithContext",
         "Element.WithContext.Input",

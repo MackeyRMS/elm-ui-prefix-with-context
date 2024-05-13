@@ -1,6 +1,6 @@
 module Element.WithContext exposing
     ( with, withAttribute, withDecoration, layout, layoutWith, element, attribute, attr
-    , Element, none, text, el
+    , Element, none, text, el, customEl
     , row, wrappedRow, column
     , paragraph, textColumn
     , Column, table, IndexedColumn, indexedTable
@@ -36,7 +36,7 @@ module Element.WithContext exposing
 
 # Basic Elements
 
-@docs Element, none, text, el
+@docs Element, none, text, el, customEl
 
 
 # Rows and Columns
@@ -602,6 +602,12 @@ If you want multiple children, you'll need to use something like `row` or `colum
 el : List (Attribute context msg) -> Element context msg -> Element context msg
 el =
     wrapAttrs Element.el run
+
+
+{-| -}
+customEl : String -> List (Attribute context msg) -> Element context msg -> Element context msg
+customEl nodeName =
+    wrapAttrs (Element.customEl nodeName) run
 
 
 {-| -}

@@ -1,6 +1,6 @@
 module Element.WithContext exposing
     ( with, withAttribute, withDecoration, layout, layoutWith, element, attribute, attr
-    , Element, none, text, el, customEl
+    , Element, none, text, el, webComponent
     , row, wrappedRow, column
     , paragraph, textColumn
     , Column, table, IndexedColumn, indexedTable
@@ -36,7 +36,7 @@ module Element.WithContext exposing
 
 # Basic Elements
 
-@docs Element, none, text, el, customEl
+@docs Element, none, text, el, webComponent
 
 
 # Rows and Columns
@@ -605,9 +605,9 @@ el =
 
 
 {-| -}
-customEl : String -> List (Attribute context msg) -> Element context msg -> Element context msg
-customEl nodeName =
-    wrapAttrs (Element.customEl nodeName) run
+webComponent : String -> List (Attribute context msg) -> List (Element context msg) -> Element context msg
+webComponent nodeName =
+    wrapContainer (Element.webComponent nodeName)
 
 
 {-| -}
